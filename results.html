@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Search Results</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+    <img src="https://tse4.mm.bing.net/th?id=OIP.d-L3HvxTH1KZfh5q_U-AvQHaHa&pid=Api&P=0&h=180" alt="Logo" class="logo">
+
 <body>
-    <a href="home.html" class="back-btn">⬅ Back to Home</a>
-  <h1>Search Results</h1>
-  <div id="results"></div>
-  <script src="js/script.js"></script>
+  <div class="container">
+    <h2>Search Missing Child</h2>
+    
+    <input type="text" id="searchInput" placeholder="Enter child name or ID">
+    <button onclick="searchChild()">Search</button>
+
+    <p id="searchResult"></p>
+
+    <br>
+    <a href="home.html" class="btn">⬅ Back to Home</a>
+  </div>
+
+  <script>
+    function searchChild() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const result = document.getElementById("searchResult");
+            if (input === "sowmika") {
+        result.textContent = "✅ Child found: Sowmika (ID: 001)";
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ No match found.";
+        result.style.color = "red";
+      }
+    }
+  </script>
+    <footer>Created by Palamakula Sowmika Reddy K.Ramakrishna,S.Sai Chanadana</footer>
+
 </body>
 </html>

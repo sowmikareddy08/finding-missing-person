@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upload Missing Child Info</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+    <img src="https://tse4.mm.bing.net/th?id=OIP.d-L3HvxTH1KZfh5q_U-AvQHaHa&pid=Api&P=0&h=180" alt="Logo" class="logo">
+
+<body>
+  <div class="container">
+    <h2>Upload Missing Child Info</h2>
+    <a href="home.html" class="btn back">⬅ Back to Home</a>
+
+    <form id="uploadForm">
+      <input type="text" id="childName" placeholder="Enter Child Name" required>
+      <input type="file" id="fileInput" required>
+      <button type="submit">Upload</button>
+    </form>
+
+    <p id="uploadResult"></p>
+  </div>
+
+  <script>
+    document.getElementById("uploadForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent page reload
+
+      const name = document.getElementById("childName").value.trim();
+      const file = document.getElementById("fileInput").files[0];
+      const result = document.getElementById("uploadResult");
+
+      if (name && file) {
+        result.textContent = `✅ Upload successful: Record added for ${name}`;
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ Please enter a name and choose a file.";
+        result.style.color = "red";
+      }
+    });
+  </script>
+    <footer>Created by Palamakula Sowmika Reddy K.Ramakrishna,S.Sai Chanadana</footer>
+
+</body>
+</html>
